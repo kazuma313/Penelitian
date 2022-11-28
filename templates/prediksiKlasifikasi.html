@@ -1,0 +1,20 @@
+{% extends "Layout.html" %}
+
+{% block content %}
+
+<div class="container-fluid px-4">
+
+    <h1 class="mt-4">Dashboard</h1>
+
+    <p>Uji Coba dengan kernel = rbf, C = 3.6, max itter = 799, dan gamma = auto. uji coba dengan menggunakan data yang telah dipisah.
+        dengan akurasi {{ akurasi }}%
+    </p>
+
+    <p>{{ hasil }}</p>
+</div>
+
+{% include "snippets/table.html" %}
+
+{% include "snippets/grafikLinearPrediksi.html" %}
+
+{% endblock %}

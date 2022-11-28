@@ -1,0 +1,38 @@
+{% extends "Layout.html" %}
+
+{% block content %}
+
+<div class="container-fluid px-4">
+
+    <h1 class="mt-4">{{ nama_hal }}</h1>
+
+    
+    
+    {% if request %}
+
+    <p>Uji Coba dengan kernel = rbf, C = 3.6, max itter = 799, dan gamma = auto. uji coba dengan menggunakan data yang telah dipisah.
+        dengan akurasi {{ akurasi }}%
+    </p>
+
+    {% endif %}
+
+    <form action="/Uji_coba" method='post' enctype='multipart/form-data'>
+
+        <label for="file">Select file:</label>
+        <input type="file" id="file" name="file" accept="data/">
+
+        <input type="submit">
+        
+    </form>
+
+    <p>{{ hasil }}</p>
+</div>
+
+{% if request %}
+
+{% include "snippets/table.html" %}
+
+{% endif %}
+
+
+{% endblock %}

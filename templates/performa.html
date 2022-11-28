@@ -1,0 +1,50 @@
+{% extends "Layout.html" %}
+
+{% block content %}
+
+<div class="container-fluid px-4">
+
+    <h1 class="mt-4">Dashboard</h1>
+
+    <p>Uji Coba dengan kernel = rbf, C = 3.6, max itter = 799. uji coba dengan menggunakan data yang telah dipisah.
+        dengan akurasi {{ akurasi }}
+    </p>
+
+    <p>{{ hasil }}</p>
+</div>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th></th>
+            <th scope="col"></th>   
+            <th colspan="2" style="text-align:center">Prediksi</th>
+        </tr>
+        <tr>
+            <th></th>
+            <th scope="col"></th>
+            <th scope="col">Mild</th>
+            <th scope="col">Savere</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th></th>
+            <th style="width:10%" scope="row">Mild</th>
+
+            <td>{{ conf[0][0] }}</td>
+            <td>{{ conf[0][1] }}</td>
+        </tr>
+        <tr>
+            <th style="width:10%">Aktual</th>
+            <th style="width:10%" scope="row">Savere</th>
+
+            <td>{{ conf[1][0] }}</td>
+            <td>{{ conf[1][1] }}</td>
+        </tr>
+    </tbody>
+</table>
+
+{% include "snippets/table.html" %}
+
+{% endblock %}
