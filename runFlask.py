@@ -1,7 +1,6 @@
 # from crypt import methods
 from cProfile import label
 from flask import Flask, render_template, url_for, request, jsonify
-from itsdangerous import json
 from werkzeug.utils import secure_filename
 
 from modul.olahFile import readFileExcel
@@ -71,7 +70,7 @@ def smote_():
 # feature importance
 @app.route("/featureImportance")
 def featureImportance():
-    # nama_hal = "Feature Importance"
+    nama_hal = "Feature Importance"
     # importance = readFileExcel('data\FeatureImportance.xlsx')
     return render_template('featureImportance.html', nama_hal = nama_hal)
 
