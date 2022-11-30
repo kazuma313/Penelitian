@@ -37,7 +37,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def proses(nama="Kurnia Zulda Matondang"):
-    pesan = ""
+    # pesan = ""
     return render_template('content.html', nama=nama)
 
 # raw data
@@ -71,8 +71,8 @@ def smote_():
 # feature importance
 @app.route("/featureImportance")
 def featureImportance():
-    nama_hal = "Feature Importance"
-    importance = readFileExcel('data\FeatureImportance.xlsx')
+    # nama_hal = "Feature Importance"
+    # importance = readFileExcel('data\FeatureImportance.xlsx')
     return render_template('featureImportance.html', nama_hal = nama_hal)
 
 # hub parameter
